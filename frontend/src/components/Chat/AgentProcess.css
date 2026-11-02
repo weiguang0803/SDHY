@@ -1,0 +1,233 @@
+.agent-process-container {
+  margin: 1rem 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 100%;
+}
+
+.agent-process-container.expanded {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.agent-process-header {
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  background: var(--bg-hover);
+}
+
+.agent-process-header:hover {
+  background: var(--bg-input);
+}
+
+.header-icon {
+  margin-right: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+
+.header-status {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-right: 1rem;
+}
+
+.status-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  margin-right: 6px;
+  box-shadow: 0 0 0 0 rgba(108, 99, 255, 0.7);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(108, 99, 255, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(108, 99, 255, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(108, 99, 255, 0); }
+}
+
+.header-toggle {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.agent-timeline {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 24px;
+  margin-right: 1rem;
+}
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-top: 6px;
+  transition: background-color 0.3s ease;
+  z-index: 2;
+}
+
+.timeline-item.running .timeline-dot {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+  animation: pulse 1.5s infinite;
+}
+
+.timeline-line {
+  width: 2px;
+  flex: 1;
+  background-color: var(--border);
+  margin-top: 4px;
+  margin-bottom: 4px;
+  min-height: 20px;
+}
+
+.timeline-content {
+  flex: 1;
+  padding-bottom: 1.5rem;
+}
+
+.timeline-item:last-child .timeline-content {
+  padding-bottom: 0;
+}
+
+.timeline-content-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.agent-icon {
+  margin-right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agent-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.agent-spinner {
+  margin-left: 0.75rem;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.agent-check {
+  margin-left: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--success);
+  font-weight: bold;
+}
+
+.agent-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.agent-result {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  background: var(--bg-hover);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  border-left: 2px solid var(--primary);
+}
+
+.timeline-item.waiting {
+  opacity: 0.5;
+}
+
+/* ================= 浅色模式专属定制适配 ================= */
+[data-theme="light"] .agent-process-container {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .agent-process-container.expanded {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .agent-process-header {
+  background: #f8fafc;
+}
+
+[data-theme="light"] .agent-process-header:hover {
+  background: #f1f5f9;
+}
+
+[data-theme="light"] .header-title {
+  color: #0f172a;
+}
+
+[data-theme="light"] .header-status {
+  color: #64748b;
+}
+
+[data-theme="light"] .agent-timeline {
+  border-top-color: #e2e8f0;
+}
+
+[data-theme="light"] .timeline-line {
+  background-color: #e2e8f0;
+}
+
+[data-theme="light"] .agent-name {
+  color: #0f172a;
+}
+
+[data-theme="light"] .agent-desc {
+  color: #64748b;
+}
+
+[data-theme="light"] .agent-result {
+  background: #f8fafc;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+  border-left-width: 3px;
+  border-left-color: #4f46e5;
+}

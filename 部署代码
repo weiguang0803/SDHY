@@ -1,0 +1,19 @@
+欢迎加入 SDHY 团队！请按以下步骤初始化你的本地开发环境：
+1. 克隆代码：
+   git clone https://github.com/Misuses/SDHY.git
+   cd SDHY
+2. 配置环境变量：
+   cp .env.example .env
+   # 打开 .env，向负责人索取开发 API Key 并填入
+3. 一键初始化本地数据库与生词演示数据：
+   python init_db_seed.py
+   # 运行完成后，即生成本地数据库，并自动同步好初始图片与视频！
+4. 分别安装依赖并启动项目：
+   # 后端：
+   pip install -r backend/requirements.txt
+   uvicorn backend.main:app --reload --port 8888
+   # 前端（根据你要负责的模块）：
+   cd frontend && npm install && npm run dev
+   # 或 admin-frontend / knowledge-frontend
+
+   

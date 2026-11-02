@@ -1,0 +1,230 @@
+.message-wrapper {
+  display: flex;
+  margin-bottom: 1.75rem;
+  width: 100%;
+  max-width: var(--chat-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.message-wrapper.user {
+  justify-content: flex-end;
+}
+
+.message-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  flex-shrink: 0;
+  font-size: 1.05rem;
+}
+
+.ai-avatar {
+  background: linear-gradient(135deg, var(--secondary) 0%, #3b82f6 100%);
+  color: white;
+  margin-right: 0.85rem;
+  box-shadow: 0 4px 12px var(--secondary-glow);
+}
+
+.user-avatar-msg {
+  background: linear-gradient(135deg, var(--primary) 0%, #a78bfa 100%);
+  color: white;
+  margin-left: 0.85rem;
+  box-shadow: 0 4px 12px var(--primary-glow);
+}
+
+.message-content-wrapper {
+  max-width: calc(100% - 56px);
+  display: flex;
+  flex-direction: column;
+}
+
+.message-wrapper.user .message-content-wrapper {
+  align-items: flex-end;
+  max-width: min(85%, 850px);
+}
+
+.message-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.35rem;
+  gap: 0.6rem;
+}
+
+.message-wrapper.user .message-header {
+  flex-direction: row-reverse;
+}
+
+.message-name {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.message-time {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.message-bubble {
+  padding: 1.1rem 1.4rem;
+  border-radius: 20px;
+  position: relative;
+  line-height: 1.68;
+}
+
+.user-bubble {
+  background: linear-gradient(135deg, var(--user-bubble) 0%, rgba(108, 99, 255, 0.4) 100%);
+  color: var(--text-primary);
+  border-top-right-radius: 4px;
+}
+
+.ai-bubble {
+  background: var(--ai-bubble);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  border-top-left-radius: 4px;
+  width: 100%;
+}
+
+.user-text {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 1.02rem;
+}
+
+.thinking-placeholder {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Markdown Styles */
+.markdown-body {
+  font-family: inherit;
+  font-size: 1.02rem;
+  line-height: 1.72;
+  color: var(--text-primary);
+  word-break: break-word;
+}
+
+.markdown-body p {
+  margin-bottom: 0.85rem;
+}
+
+.markdown-body p:last-child {
+  margin-bottom: 0;
+}
+
+[data-theme="light"] .user-bubble {
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.18);
+}
+
+[data-theme="light"] .user-bubble .user-text {
+  color: #ffffff;
+}
+
+[data-theme="light"] .ai-bubble {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.markdown-body code {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  padding: 0.2em 0.45em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: monospace;
+  border: 1px solid var(--border);
+}
+
+.markdown-body pre {
+  background: var(--bg-input);
+  padding: 1.1rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  margin: 1.2rem 0;
+  border: 1px solid var(--border);
+}
+
+[data-theme="light"] .markdown-body pre {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.markdown-body pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+
+.markdown-body blockquote {
+  border-left: 3px solid var(--primary);
+  padding-left: 0.85rem;
+  margin: 0.85rem 0;
+  color: var(--text-secondary);
+}
+
+.markdown-body ul, .markdown-body ol {
+  padding-left: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.markdown-body h1 {
+  font-size: 1.55rem;
+  margin-top: 1.4rem;
+  margin-bottom: 0.85rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.markdown-body h2 {
+  font-size: 1.35rem;
+  margin-top: 1.3rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.markdown-body h3 {
+  font-size: 1.18rem;
+  margin-top: 1.2rem;
+  margin-bottom: 0.65rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.markdown-body h4 {
+  font-size: 1.05rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 6px;
+  height: 16px;
+  background-color: var(--primary);
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: typingCursor 1s infinite;
+}
+
+@keyframes typingCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

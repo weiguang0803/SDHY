@@ -1,0 +1,114 @@
+/* ========== SuggestedQuestions ========== */
+.suggested-questions-container {
+  margin-top: 0.85rem;
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  background: rgba(18, 18, 26, 0.6);
+  border: 1px dashed var(--border-light);
+  backdrop-filter: blur(8px);
+}
+
+.suggested-questions-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.suggested-questions-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.suggested-questions-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.suggested-question-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.suggested-question-chip:hover:not(:disabled) {
+  background: var(--bg-hover);
+  border-color: var(--primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(108, 99, 255, 0.25);
+}
+
+.suggested-question-chip:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.suggested-question-chip:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.chip-icon {
+  font-size: 0.85rem;
+}
+
+.chip-text {
+  line-height: 1.3;
+}
+
+.chip-arrow {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.suggested-question-chip:hover:not(:disabled) .chip-arrow {
+  color: var(--primary);
+  transform: translateX(3px);
+}
+
+/* ================= 浅色模式专属定制适配 ================= */
+[data-theme="light"] .suggested-questions-container {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+[data-theme="light"] .suggested-questions-title {
+  color: #475569;
+}
+
+[data-theme="light"] .suggested-question-chip {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #1e293b;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .suggested-question-chip:hover:not(:disabled) {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  color: #2563eb;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+[data-theme="light"] .suggested-question-chip .chip-arrow {
+  color: #94a3b8;
+}
+
+[data-theme="light"] .suggested-question-chip:hover:not(:disabled) .chip-arrow {
+  color: #2563eb;
+}
+

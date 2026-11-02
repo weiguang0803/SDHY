@@ -1,0 +1,162 @@
+.system-info-page {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1000px;
+}
+
+.info-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.version-badge {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+
+.env-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.info-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.sys-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sys-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+  box-shadow: 0 10px 25px -6px rgba(59, 130, 246, 0.25);
+}
+
+.sys-card-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background-color: var(--bg-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.sys-card-icon.brain {
+  color: var(--primary);
+}
+
+.sys-card:hover .sys-card-icon {
+  transform: scale(1.05);
+}
+
+.sys-card-content {
+  flex: 1;
+}
+
+.sys-card-content h4 {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0 0 8px 0;
+  font-weight: 500;
+}
+
+.sys-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  word-break: break-all;
+}
+
+.sys-value.model-name {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  letter-spacing: -0.2px;
+}
+
+.sys-value.url {
+  color: var(--secondary);
+}
+
+.sys-value.masked {
+  letter-spacing: 2px;
+  font-family: monospace;
+}
+
+.sys-value.code {
+  font-family: monospace;
+  background-color: var(--bg-darkest);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* ================= 浅色模式专属定制适配 ================= */
+[data-theme="light"] .sys-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .sys-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 8px 24px -4px rgba(59, 130, 246, 0.15);
+}
+
+[data-theme="light"] .sys-card-icon {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+[data-theme="light"] .sys-card-icon.brain {
+  color: #2563eb;
+  background-color: #eff6ff;
+}
+
+[data-theme="light"] .sys-card-content h4 {
+  color: #64748b;
+}
+
+[data-theme="light"] .sys-value {
+  color: #0f172a;
+}
+
+[data-theme="light"] .sys-value.url {
+  color: #0284c7;
+}
+
+[data-theme="light"] .sys-value.code {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+[data-theme="light"] .env-tag {
+  color: #475569;
+}
+
+

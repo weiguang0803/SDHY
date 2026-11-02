@@ -1,0 +1,234 @@
+/* Rich Markdown Engine for Admin Conversation Review */
+.admin-rich-markdown {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--text-primary);
+  word-break: break-word;
+}
+
+.admin-rich-markdown p {
+  margin: 0 0 0.85rem 0;
+}
+
+.admin-rich-markdown p:last-child {
+  margin-bottom: 0;
+}
+
+/* Headings */
+.admin-rich-markdown h1,
+.admin-rich-markdown h2,
+.admin-rich-markdown h3,
+.admin-rich-markdown h4 {
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 1.25rem;
+  margin-bottom: 0.6rem;
+}
+
+.admin-rich-markdown h1:first-child,
+.admin-rich-markdown h2:first-child,
+.admin-rich-markdown h3:first-child,
+.admin-rich-markdown h4:first-child {
+  margin-top: 0;
+}
+
+.admin-rich-markdown h1 {
+  font-size: 1.35rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+}
+
+.admin-rich-markdown h2 {
+  font-size: 1.2rem;
+  border-bottom: 1px solid var(--border-light, rgba(255, 255, 255, 0.08));
+  padding-bottom: 0.3rem;
+}
+
+.admin-rich-markdown h3 {
+  font-size: 1.05rem;
+}
+
+.admin-rich-markdown h4 {
+  font-size: 0.95rem;
+}
+
+/* Lists */
+.admin-rich-markdown ul,
+.admin-rich-markdown ol {
+  margin: 0 0 0.85rem 0;
+  padding-left: 1.5rem;
+}
+
+.admin-rich-markdown li {
+  margin-bottom: 0.35rem;
+}
+
+.admin-rich-markdown li:last-child {
+  margin-bottom: 0;
+}
+
+/* Blockquote */
+.admin-rich-markdown blockquote {
+  margin: 0.85rem 0;
+  padding: 0.6rem 1rem;
+  border-left: 3px solid var(--primary);
+  background: rgba(59, 130, 246, 0.08);
+  border-radius: 0 8px 8px 0;
+  color: var(--text-secondary);
+}
+
+.admin-rich-markdown blockquote p {
+  margin: 0;
+}
+
+/* Code */
+.admin-rich-markdown .markdown-inline-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.88em;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--secondary, #38bdf8);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.admin-rich-markdown .markdown-pre {
+  background: var(--bg-darkest, #0b0f19);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  overflow-x: auto;
+  margin: 0.85rem 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.88em;
+  line-height: 1.5;
+}
+
+.admin-rich-markdown .markdown-pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  color: #e2e8f0;
+}
+
+/* Links */
+.admin-rich-markdown a {
+  color: var(--primary, #3b82f6);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(59, 130, 246, 0.4);
+  transition: all 0.2s ease;
+}
+
+.admin-rich-markdown a:hover {
+  color: var(--secondary, #06b6d4);
+  border-bottom-style: solid;
+}
+
+/* Table */
+.admin-rich-markdown .markdown-table-wrapper {
+  overflow-x: auto;
+  margin: 0.85rem 0;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.admin-rich-markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+  text-align: left;
+}
+
+.admin-rich-markdown th {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  font-weight: 600;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.admin-rich-markdown td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-light, rgba(255, 255, 255, 0.05));
+  color: var(--text-secondary);
+}
+
+.admin-rich-markdown tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-rich-markdown tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.admin-rich-markdown hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.25rem 0;
+}
+
+/* ================= 浅色模式专属定制适配 ================= */
+[data-theme="light"] .admin-rich-markdown {
+  color: #0f172a;
+}
+
+[data-theme="light"] .admin-rich-markdown h1,
+[data-theme="light"] .admin-rich-markdown h2,
+[data-theme="light"] .admin-rich-markdown h3,
+[data-theme="light"] .admin-rich-markdown h4 {
+  color: #0f172a;
+}
+
+[data-theme="light"] .admin-rich-markdown h1 {
+  border-bottom-color: #e2e8f0;
+}
+
+[data-theme="light"] .admin-rich-markdown h2 {
+  border-bottom-color: #f1f5f9;
+}
+
+[data-theme="light"] .admin-rich-markdown blockquote {
+  background: #eff6ff;
+  border-left-color: #3b82f6;
+  color: #334155;
+}
+
+[data-theme="light"] .admin-rich-markdown .markdown-inline-code {
+  background: #f1f5f9;
+  color: #0284c7;
+  border-color: #e2e8f0;
+}
+
+[data-theme="light"] .admin-rich-markdown .markdown-pre {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+[data-theme="light"] .admin-rich-markdown .markdown-pre code {
+  color: #1e293b;
+}
+
+[data-theme="light"] .admin-rich-markdown .markdown-table-wrapper {
+  border-color: #e2e8f0;
+}
+
+[data-theme="light"] .admin-rich-markdown th {
+  background: #f8fafc;
+  color: #0f172a;
+  border-bottom-color: #e2e8f0;
+}
+
+[data-theme="light"] .admin-rich-markdown td {
+  border-bottom-color: #f1f5f9;
+  color: #334155;
+}
+
+[data-theme="light"] .admin-rich-markdown tbody tr:hover {
+  background: #f8fafc;
+}
+
+[data-theme="light"] .admin-rich-markdown hr {
+  border-top-color: #e2e8f0;
+}

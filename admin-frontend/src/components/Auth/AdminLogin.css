@@ -1,0 +1,384 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-darkest, #070913);
+  padding: 24px;
+}
+
+/* 科技光晕与网格 */
+.admin-ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb-admin-1 {
+  width: 520px;
+  height: 520px;
+  top: -120px;
+  left: -80px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.22) 0%, rgba(99, 102, 241, 0.05) 70%, transparent 100%);
+  animation: adminOrb1 18s ease-in-out infinite alternate;
+}
+
+.orb-admin-2 {
+  width: 480px;
+  height: 480px;
+  bottom: -100px;
+  right: -80px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.18) 0%, rgba(59, 130, 246, 0.05) 70%, transparent 100%);
+  animation: adminOrb2 16s ease-in-out infinite alternate;
+}
+
+.admin-cyber-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="light"] .admin-cyber-grid {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+@keyframes adminOrb1 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(40px, 30px) scale(1.08); }
+}
+
+@keyframes adminOrb2 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-30px, -40px) scale(1.05); }
+}
+
+/* 主控制台卡片 */
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 2.6rem 2.2rem;
+  border-radius: 24px;
+  z-index: 1;
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.75),
+              0 0 40px rgba(59, 130, 246, 0.15),
+              inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="light"] .login-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+.admin-logo-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 4px 14px rgba(59, 130, 246, 0.4));
+}
+
+.login-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-primary, #f8fafc);
+  margin-bottom: 0.35rem;
+  background: linear-gradient(135deg, #ffffff 30%, #38bdf8 70%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.admin-subtitle {
+  color: var(--text-secondary, #94a3b8);
+  font-size: 0.88rem;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.admin-auth-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 20px;
+  font-size: 0.76rem;
+  color: #93c5fd;
+  font-weight: 500;
+}
+
+/* 模式切换 Pills */
+.admin-mode-tabs {
+  display: flex;
+  background: rgba(11, 15, 25, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 4px;
+  margin-bottom: 1.4rem;
+}
+
+.mode-tab-btn {
+  flex: 1;
+  padding: 0.7rem;
+  border: none;
+  background: transparent;
+  color: var(--text-muted, #64748b);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.mode-tab-btn:hover {
+  color: var(--text-primary, #f8fafc);
+}
+
+.mode-tab-btn.active {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.28) 0%, rgba(37, 99, 235, 0.2) 100%);
+  color: #ffffff;
+  border: 1px solid rgba(59, 130, 246, 0.45);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+
+.alert {
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-size: 0.84rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.alert.error {
+  background: rgba(239, 68, 68, 0.12);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.alert.success {
+  background: rgba(34, 197, 94, 0.12);
+  color: #86efac;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* 输入框包装器 */
+.admin-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-adornment {
+  position: absolute;
+  left: 14px;
+  color: var(--text-muted, #64748b);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.25s ease;
+}
+
+.admin-input-wrapper input {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.75rem;
+  background: rgba(11, 15, 25, 0.75);
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  border-radius: 12px;
+  color: var(--text-primary, #f8fafc);
+  font-size: 0.92rem;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+.admin-input-wrapper input::placeholder {
+  color: #475569;
+}
+
+.admin-input-wrapper input:focus {
+  outline: none;
+  border-color: #38bdf8;
+  background: rgba(11, 15, 25, 0.95);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+}
+
+.admin-input-wrapper:focus-within .input-adornment {
+  color: #38bdf8;
+}
+
+.admin-register-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 0.6rem;
+  padding: 0.95rem 1.2rem;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
+  color: #ffffff;
+  font-size: 0.98rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 20px -4px rgba(59, 130, 246, 0.55);
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -4px rgba(59, 130, 246, 0.7);
+  filter: brightness(1.08);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.admin-loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: spin 0.8s linear infinite;
+}
+
+.toggle-mode {
+  margin-top: 1.6rem;
+  text-align: center;
+}
+
+.toggle-mode button {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary, #94a3b8);
+  font-size: 0.84rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.toggle-mode button:hover {
+  color: #38bdf8;
+  text-decoration: underline;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* ================= 浅色模式专属定制适配 ================= */
+[data-theme="light"] .login-header h1 {
+  background: linear-gradient(135deg, #0f172a 20%, #2563eb 70%, #0284c7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="light"] .admin-subtitle {
+  color: #64748b;
+}
+
+[data-theme="light"] .admin-auth-badge {
+  background: #eff6ff;
+  color: #2563eb;
+  border-color: #bfdbfe;
+}
+
+[data-theme="light"] .admin-mode-tabs {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+}
+
+[data-theme="light"] .mode-tab-btn {
+  color: #64748b;
+}
+
+[data-theme="light"] .mode-tab-btn:hover {
+  color: #0f172a;
+}
+
+[data-theme="light"] .mode-tab-btn.active {
+  background: #ffffff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .admin-input-wrapper input {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+}
+
+[data-theme="light"] .admin-input-wrapper input::placeholder {
+  color: #94a3b8;
+}
+
+[data-theme="light"] .admin-input-wrapper input:focus {
+  background: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+[data-theme="light"] .admin-input-wrapper:focus-within .input-adornment {
+  color: #2563eb;
+}
+
+[data-theme="light"] .toggle-mode button {
+  color: #475569;
+}
+
+[data-theme="light"] .toggle-mode button:hover {
+  color: #2563eb;
+}
+

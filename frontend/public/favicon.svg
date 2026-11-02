@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="sg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6c63ff"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#00d4aa"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#0a0a0f"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" stroke="url(#sg)" stroke-width="2" stroke-opacity="0.6"/>
+  <!-- AI Sparkle & Wisdom Crest -->
+  <path d="M32 14L36 26L48 30L36 34L32 46L28 34L16 30L28 26L32 14Z" fill="url(#sg)" fill-opacity="0.25" stroke="url(#sg)" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="32" cy="30" r="3" fill="#00d4aa"/>
+  <circle cx="48" cy="18" r="2" fill="#6c63ff"/>
+  <circle cx="16" cy="44" r="2" fill="#8b5cf6"/>
+</svg>
